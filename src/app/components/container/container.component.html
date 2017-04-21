@@ -7,9 +7,9 @@
         <a class="navbar-brand" href="#"><strong>VA</strong></a>
       </div>
       <ul class="nav navbar-nav">
-        <li class="active"><a routerLink="/app/about" routerLinkActive="active">О себе</a></li>
-        <li><a routerLink="/app/blog" routerLinkActive="active">Блог</a></li>
-        <li><a href="#">Мои проекты</a></li>
+        <li><a id="about_link" routerLink="/app/about" routerLinkActive="active" (click)="setSwitchActive($event)">О себе</a></li>
+        <li><a id="blog_link" routerLink="/app/blog" routerLinkActive="active" (click)="setSwitchActive($event)">Блог</a></li>
+        <li><a id="projects_link" routerLink="/app/projects" routerLinkActive="active" (click)="setSwitchActive($event)">Мои проекты</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#">Владимир Алехин</a></li>
