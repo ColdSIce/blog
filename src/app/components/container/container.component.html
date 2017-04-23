@@ -12,8 +12,8 @@
         <li><a id="projects_link" routerLink="/app/projects" routerLinkActive="active" (click)="setSwitchActive($event)">Мои проекты</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Владимир Алехин</a></li>
-        <li><a href="#">Выйти</a></li>
+        <li><a href="#">{{ name.auth.displayName }}</a></li>
+        <li><a href="#" (click)="logout()">Выйти</a></li>
       </ul>
     </div>
   </div>  

@@ -1,0 +1,28 @@
+<div class="container-fluid login_back">
+  <div class="signup_div">
+    <form #formData='ngForm' (ngSubmit)="onSubmit(formData)">
+      <div class="signup_header" (click)="goBack()">
+        <span id="signup_title">Назад</span>
+      </div>
+      <div class="signup_body">
+        <div class="signup_with_container">
+          <div class="credentials">
+            <div class="form-group">
+              <label for="exampleInputEmail1">Email</label>
+              <input required (ngModel)="email" type="email" name="password" class="form-control" id="email_input" aria-describedby="emailHelp" placeholder="Enter">
+              <small id="emailHelp" class="form-text text-muted">Я никогда не передаю ваши данные третьим лицам!</small>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Пароль</label>
+              <input required (ngModel)="password" name="password" type="password" class="form-control" id="pwd_input" placeholder="Пароль">
+            </div>
+          </div>
+        </div>
+        <span class="error" *ngIf="error">{{ error }}</span>
+      </div>
+      <div class="signup_footer">
+         <button type="submit" [disabled]="!formData.valid" id="signup_submit" class="btn">Присоединиться</button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -4,6 +4,11 @@ body{
     background-color: #fff;
 }
 
+.btn{
+    padding: 9px 12px;
+    border-radius: 0px;
+}
+
 .navbar-default .navbar-brand{
     font-size: 30px;
     color: #FF3B3F;
@@ -76,12 +81,42 @@ body{
     background-color: #FF3B3F;
     border-color: #FF3B3F;
     border-radius:0px;
+    box-shadow: none;
+    outline:none;
+    transition: all .3s ease;
 }
 
 .btn-primary:hover{
     background-color: #E62226;
     border-color: #E62226;
+    box-shadow: none;
+    outline:none;
 }
+
+.btn-primary:active,
+.btn-primary:focus{
+    background-color: #fff;
+    border-color: #fff;
+    color: #E62226;
+    box-shadow: none;
+    outline:none;
+}
+
+.btn-primary.active.focus, 
+.btn-primary.active:focus, 
+.btn-primary.active:hover, 
+.btn-primary:active.focus, 
+.btn-primary:active:focus,
+ .btn-primary:active:hover, 
+ .open>.dropdown-toggle.btn-primary.focus, 
+ .open>.dropdown-toggle.btn-primary:focus, 
+ .open>.dropdown-toggle.btn-primary:hover{
+     background-color: #fff;
+     border-color: #fff;
+     color: #E62226;
+     box-shadow: none;
+    outline:none;
+ }
 
 .input-group .form-control:first-child, .input-group-addon:first-child, .input-group-btn:first-child>.btn, .input-group-btn:first-child>.btn-group>.btn, .input-group-btn:first-child>.dropdown-toggle, .input-group-btn:last-child>.btn-group:not(:last-child)>.btn, .input-group-btn:last-child>.btn:not(:last-child):not(.dropdown-toggle){
     border-radius:0px;
@@ -100,8 +135,7 @@ body{
 .login_div{
     width: 401px;
     min-width: 401px;
-    height: 500px;
-    min-height: 500px;
+    height: 182px;
     padding: 0px;
     background-color: #fff;
     margin: auto; 
@@ -114,27 +148,27 @@ body{
 
 .login_header{
     width: 100%;
-    height: 70px;
+    height: 50px;
     border-bottom: #E62226 2px solid;
     text-align: center;
-    font-size: 36px;
+    font-size: 24px;
     color: #777;
     padding:7px;
 }
 
 .login_body{
-    height: 360px;
+    height: 82px;
     width: 100%;
     background-color: #fff;
 }
 
 .login_footer{
-    height: 70px;
+    height: 50px;
     width: 100%;
     background-color: #fff;
     border-top: #E62226 2px solid;
     text-align: center;
-    font-size: 36px;
+    font-size: 24px;
     color: #777;
     padding:7px;
     transition: all .4s ease;
@@ -154,31 +188,32 @@ body{
 
 .login_with_container{
     width: 100%;
-    height: 160px;
+    height: 82px;
     padding: 0px 15px;
 }
 
 .login_with_container .row{
-    border-bottom: #E62226 2px solid;
+    height: 82px;
 }
 
-.login_with_container .col-xs-4{
+.login_with_container .col-xs-3{
     padding-top: 15px;
     padding-bottom: 15px;
     text-align: center;
     font-size: 40px;
     transition: all .4s ease;
     color: #777;
+    height: 82px;
 }
 
 
-.login_with_container .col-xs-4:hover{
+.login_with_container .col-xs-3:hover{
     color: #E62226;
     cursor: pointer;
 }
 
-.login_with_container .col-xs-4:active,
-.login_with_container .col-xs-4:focus{
+.login_with_container .col-xs-3:active,
+.login_with_container .col-xs-3:focus{
     color: #fff;
     background-color: #E62226;
     cursor: pointer;
@@ -206,3 +241,138 @@ body{
     box-shadow: none;
     box-shadow: 0 2px 0px 0px #E62226;
 }    
+
+
+.signup_div{
+    width: 401px;
+    min-width: 401px;
+    height: 350px;
+    padding: 0px;
+    background-color: #fff;
+    margin: auto; 
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+}
+
+.signup_body{
+    height: 250px;
+    width: 100%;
+    background-color: #fff;
+}
+
+.signup_with_container{
+    width: 100%;
+    height: 82px;
+    padding: 0px 15px;
+}
+
+.signup_header{
+    width: 100%;
+    height: 50px;
+    border-bottom: #E62226 2px solid;
+    text-align: center;
+    font-size: 24px;
+    color: #777;
+    padding:7px;
+}
+
+.signup_header:hover{
+    cursor: pointer;
+    color: #E62226;
+}
+
+.signup_header:active,
+.signup_header:focus{
+    cursor: pointer;
+    color: #fff;
+    background-color: #E62226;
+}
+
+.login_email_div{
+    width: 401px;
+    min-width: 401px;
+    height: 360px;
+    padding: 0px;
+    background-color: #fff;
+    margin: auto; 
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+}
+
+.login_email_body{
+    height: 260px;
+    width: 100%;
+    background-color: #fff;
+}
+
+.login_email_body .credentials{
+    padding: 30px 25px;
+    color: #777;
+}
+
+.btn-default{
+    border: none;
+    color: #777;
+    box-shadow: none;
+    box-shadow: 0 2px 0px 0px #fff;
+    transition: all .3s ease;
+    outline: none;
+}
+
+.btn-default:hover{
+    color: #FF3B3F;
+    background-color: #fff;
+    box-shadow: none;
+    box-shadow: 0 2px 0px 0px #E62226;
+    outline: none;
+}
+
+.btn-default:active,
+.btn-default:focus{
+    color: #fff;
+    background-color: #FF3B3F;
+    box-shadow: none;
+    box-shadow: 0 2px 0px 0px #E62226;
+    outline: none;
+}
+
+.signup_footer{
+    height: 50px;
+    width: 100%;
+    background-color: #fff;
+    border-top: #E62226 2px solid;
+    text-align: center;
+}
+
+#signup_submit{
+    background-color: #fff;
+    color: #777;
+    font-size: 24px;
+    padding: 5px 10px;
+    width: 100%;
+    height: 100%;
+    transition:all .3s ease;
+    outline: none;
+    box-shadow: none;
+}
+
+#signup_submit:hover{
+    background-color: #fff;
+    color: #E62226;
+    outline: none;
+    box-shadow: none;
+}
+
+#signup_submit:active,
+#signup_submit:focus{
+    background-color: #E62226;
+    color: #fff;
+    outline: none;
+    box-shadow: none;
+}

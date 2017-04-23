@@ -1,5 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { DOCUMENT } from '@angular/platform-browser';
+import { AngularFire, AuthProviders, AuthMethods } from 'angularfire2';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-container',
@@ -10,8 +12,21 @@ export class ContainerComponent implements OnInit {
 
   current:any;
   url:string;
+  name: any;
 
-  constructor(@Inject(DOCUMENT) private document: any) { }
+  constructor(@Inject(DOCUMENT) private document: any,public af: AngularFire,private router: Router) {
+    this.af.auth.subscribe(auth => {
+      if(auth) {
+        this.name = auth;
+      }
+    });
+  }
+
+  logout() {
+     this.af.auth.logout();
+     console.log('logged out');
+     this.router.navigateByUrl('/login');
+  }
 
   ngOnInit() {  
     this.url = this.document.location.href;
