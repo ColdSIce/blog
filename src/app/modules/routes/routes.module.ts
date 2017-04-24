@@ -8,18 +8,20 @@ import { ContainerComponent } from '../../components/container/container.compone
 import { AboutComponent } from '../../components/about/about.component';
 import { BlogComponent } from '../../components/blog/blog.component';
 import { ProjectsComponent } from '../../components/projects/projects.component';
+import { PageNotFoundComponent } from '../../components/page-not-found/page-not-found.component';
 import { AuthGuard } from '../../auth.service';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/app/about', pathMatch:'full' },
+  { path: '', redirectTo: '/login', pathMatch:'full' },
   { path: 'login',  component: LoginComponent },
   { path: 'login-email',  component: EmailComponent },
   { path: 'signup',  component: SignupComponent },
-  { path: 'app', component: ContainerComponent, children:[
+  { path: 'app', component: ContainerComponent, canActivate: [AuthGuard], children:[
     {path: 'about', component: AboutComponent},
     {path: 'blog', component: BlogComponent},
     {path: 'projects', component: ProjectsComponent}
-  ] }
+  ] },
+  { path: '**', component: PageNotFoundComponent }
 ];
 
 @NgModule({

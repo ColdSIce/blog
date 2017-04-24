@@ -1,4 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
 body{
     font-family: 'Roboto', sans-serif;
     background-color: #fff;
@@ -375,4 +380,75 @@ body{
     color: #fff;
     outline: none;
     box-shadow: none;
+}
+
+
+/*****LOADER*****/
+#loader_container{
+    height: 100%;
+    text-align: center;
+}
+
+#load_txt {
+  font-family: 'Roboto', 'Lucida Grande', Tahoma, Verdana, sans-serif;
+  font-size: 2.1875rem;
+  font-weight: 100;
+  color: #A75F63;
+  text-shadow: 0 1px 1px white;
+}
+
+.bubbles span {
+  display: inline-block;
+  vertical-align: middle;
+  width: 15px;
+  height: 15px;
+  margin: 150px auto;
+  background: #FF3B3F;
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  animation: bubbly .9s infinite alternate;
+}
+
+/* Bubbles */
+#bubble2 {
+  animation-delay: .27s;
+}
+
+#bubble3 {
+  animation-delay: .54s;
+}
+
+@-webkit-keyframes bubbly {
+  0% {
+    width: 15px;
+    height: 15px;
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    width: 50px;
+    height: 50px;
+    opacity: 0.1;
+    transform: translateY(-32px);
+  }
+}
+@-moz-keyframes bubbly {
+  0% {
+    width: 15px;
+    height: 15px;
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    width: 50px;
+    height: 50px;
+    opacity: 0.1;
+    transform: translateY(-32px);
+  }
+}
+
+/******BLOG******/
+#blog_search{
+    height: 40px;
 }

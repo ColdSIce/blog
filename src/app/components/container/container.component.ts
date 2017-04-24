@@ -2,6 +2,8 @@ import { Component, OnInit, Inject } from '@angular/core';
 import { DOCUMENT } from '@angular/platform-browser';
 import { AngularFire, AuthProviders, AuthMethods } from 'angularfire2';
 import { Router } from '@angular/router';
+import "rxjs/add/operator/filter";
+import "rxjs/add/operator/first";
 
 @Component({
   selector: 'app-container',
@@ -24,8 +26,7 @@ export class ContainerComponent implements OnInit {
 
   logout() {
      this.af.auth.logout();
-     console.log('logged out');
-     this.router.navigateByUrl('/login');
+     this.router.navigateByUrl('/app/about');
   }
 
   ngOnInit() {  
