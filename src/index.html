@@ -20,6 +20,18 @@
             $(this).addClass("slide");
           }
         });
+        $('#lets_Scroll').each(function(){
+          var pos = $(this).offset().top;
+
+          var winTop = $(window).scrollTop();
+          if (pos < winTop + 800) {
+            $('#lets_Scroll').hide();
+          }
+        });
+      });  
+      $('#lets_Scroll').click(function(){
+        console.log("fff");
+        $('html,body').animate({scrollTop:200});
       });
     });
   </script>
