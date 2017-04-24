@@ -20,33 +20,21 @@
             $(this).addClass("slide");
           }
         });
-        $('#lets_Scroll').each(function(){
+        $('#lets_Scroll_Container').each(function(){
           var pos = $(this).offset().top;
 
           var winTop = $(window).scrollTop();
           if (pos < winTop + 800) {
-            $('#lets_Scroll').hide();
+            $('#lets_Scroll_Container').hide();
           }
         });
       });  
-      $('#lets_Scroll').click(function(){
-        console.log("fff");
-        $('html,body').animate({scrollTop:200});
-      });
     });
   </script>
 </head>
 <body>
   <app-root>
-    <div class="container-fluid" id="loader_container">
-      <h1 id="load_txt"></h1>
-
-      <div class="bubbles">
-        <span></span>
-        <span id="bubble2"></span>
-        <span id="bubble3"></span>
-      </div>
-    </div>
+    <div class="spinner2 moon2"></div>
   </app-root>
 </body>
 </html>

@@ -44,6 +44,7 @@ export class ContainerComponent implements OnInit {
   }
 
   setSwitchActive(e){
+    window.scrollTo(0, 0);
     this.current.classList.remove("active");
     e.target.parentElement.classList.add("active");
     this.current = e.target.parentElement;

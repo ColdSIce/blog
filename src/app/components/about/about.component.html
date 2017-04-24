@@ -1,12 +1,22 @@
 <div class="container-fluid bg-1 text-center">
-  <h3>Кто я?</h3>
+  <h3 class="who">Кто я?</h3>
   <img src="assets/me.jpg" alt="Me" class="img-responsive img-circle me" style="display:inline">
   <h3>Я инженер</h3>
+  <div id="parallax-container">
+    <div class="box box-6 spinner moon"></div>
+    <div class="box box-5 spinner moon"></div>
+    <div class="box box-4 spinner moon"></div>	
+    <div class="box box-3 spinner moon"></div>
+    <div class="box box-2 spinner moon"></div>
+    <div class="box box-1 spinner moon"></div>
+  </div>
 </div>
 
 <section>
   <div class="row" id="vectors_title">
-    <img id="lets_Scroll" src="assets/scroll.gif" alt="scroll_down">
+    <div id="lets_Scroll_Container">
+      <img id="lets_Scroll" src="assets/scroll.gif" alt="scroll_down" onclick="$('html,body').animate({scrollTop:500});">
+    </div>  
     <h3 class="slideanim">Чем я занимаюсь?</h3>
   </div>
   <div class="row slideanim">
