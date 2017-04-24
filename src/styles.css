@@ -452,3 +452,94 @@ body{
 #blog_search{
     height: 40px;
 }
+
+/*****ARTICLES*****/
+#vectors_title{
+    text-align: center;
+    padding: 15px;
+    padding-top: 60px;
+}
+
+.article-box{
+    text-align: center;
+    padding-top: 37px;
+    padding-bottom: 37px;
+    padding-left: 40px;
+    padding-right: 40px;
+    transition: all .3s ease;
+}
+
+.article-box:hover{
+    box-shadow: 5px 0px 40px rgba(0,0,0, .2);
+}
+
+.article-box a{
+    font-size: 30px;
+    color: #777;
+    transition: all .3s ease;
+}
+
+.article-box a:hover{
+    color: #FF3B3F;
+    cursor: pointer;
+}
+
+.box-top{
+    
+}
+
+.box-icon{
+    font-size: 60px;
+}
+
+.box-header h3{
+    margin-top: 0px;
+    transition: all .3s ease;
+}
+
+.box-header h3:hover{
+    margin-top: 0px;
+    cursor: pointer;
+    color: #FF3B3F; 
+}
+
+.box-body{
+    color: #777;
+    line-height: 1.7;
+}
+
+
+
+.slideanim {visibility:hidden;}
+.slide {
+    /* The name of the animation */
+    animation-name: slide;
+    -webkit-animation-name: slide; 
+    /* The duration of the animation */
+    animation-duration: 1s; 
+    -webkit-animation-duration: 1s;
+    /* Make the element visible */
+    visibility: visible; 
+}
+
+/* Go from 0% to 100% opacity (see-through) and specify the percentage from when to slide in the element along the Y-axis */
+@keyframes slide {
+    0% {
+        opacity: 0;
+        transform: translateY(70%);
+    } 
+    100% {
+        opacity: 1;
+        transform: translateY(0%);
+    } 
+}
+@-webkit-keyframes slide {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(70%);
+    } 
+    100% {
+        opacity: 1;
+        -webkit-transform: translateY(0%);
+    }
+}
