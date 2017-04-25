@@ -8,6 +8,7 @@ import { ContainerComponent } from '../../components/container/container.compone
 import { AboutComponent } from '../../components/about/about.component';
 import { BlogComponent } from '../../components/blog/blog.component';
 import { ProjectsComponent } from '../../components/projects/projects.component';
+import { PostComponent } from '../../components/post/post.component';
 import { PageNotFoundComponent } from '../../components/page-not-found/page-not-found.component';
 import { AuthGuard } from '../../auth.service';
 
@@ -19,7 +20,8 @@ const routes: Routes = [
   { path: 'app', component: ContainerComponent, canActivate: [AuthGuard], children:[
     {path: 'about', component: AboutComponent},
     {path: 'blog', component: BlogComponent},
-    {path: 'projects', component: ProjectsComponent}
+    {path: 'projects', component: ProjectsComponent},
+    {path: 'post', component: PostComponent}
   ] },
   { path: '**', component: PageNotFoundComponent }
 ];

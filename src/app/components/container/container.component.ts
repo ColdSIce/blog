@@ -40,7 +40,7 @@ export class ContainerComponent implements OnInit {
       this.current = document.getElementById("projects_link").parentElement;
     }
 
-    this.current.classList.add("active");
+    if(this.current)this.current.classList.add("active");
   }
 
   setSwitchActive(e){

@@ -206,6 +206,14 @@ body{
     background-color: #FFF;
 }
 
+.proj-container{
+    margin-top: 20px;
+    padding-top: 40px;
+    padding-left: 30px;
+    padding-right: 30px;
+    background-color: #FFF;
+}
+
 .btn-primary {
     color: #fff;
     background-color: #FF3B3F;
@@ -547,6 +555,46 @@ body{
 
 
 /******BLOG******/
+.post-preview{
+    color:#333;
+}
+
+
+.post-preview a{
+    color:#333;
+    transition: all .3s ease;
+}
+
+.post-preview a:hover{
+    text-decoration: none;
+    color: #FF3B3F;
+    transform: translate(10px);
+}
+
+.post-subtitle{
+
+}
+
+.post-meta a, .lead a, ol a{
+    color: #FF3B3F;
+}
+
+.post-meta a:hover,
+.lead a:hover,
+ol a:hover{
+    text-decoration: underline;
+}
+
+.post-meta a:hover, .lead a:hover, ol a:hover{
+    text-decoration: underline;
+    color: #FF3B3F;
+}
+
+.btn-pager{
+    float:right;
+}
+
+/*****POST******/
 #blog_search{
     height: 40px;
 }

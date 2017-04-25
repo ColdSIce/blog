@@ -15,6 +15,7 @@ import { EmailComponent } from './components/email/email.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { AuthGuard } from './auth.service';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { PostComponent } from './components/post/post.component';
 
 export const firebaseconfig = {
   apiKey: "AIzaSyDE4CprlYX0gq8xxDfSSjxXj59vdskZt7c",
@@ -35,7 +36,8 @@ export const firebaseconfig = {
     ProjectsComponent,
     EmailComponent,
     SignupComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    PostComponent
   ],
   imports: [
     BrowserModule,
