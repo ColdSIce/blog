@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Post } from '../../model/post';
+import { PostService } from '../../services/post.service';
+import {AngularFire, FirebaseListObservable} from 'angularfire2';
 
 @Component({
   selector: 'app-blog',
@@ -7,7 +10,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BlogComponent implements OnInit {
 
-  constructor() { }
+  posts:FirebaseListObservable<Post[]>;
+
+  constructor(private ps:PostService) {
+    this.posts = ps.getPosts();
+  }
 
   ngOnInit() {
   }
