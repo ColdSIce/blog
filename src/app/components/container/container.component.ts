@@ -4,17 +4,21 @@ import { AngularFire, AuthProviders, AuthMethods } from 'angularfire2';
 import { Router } from '@angular/router';
 import "rxjs/add/operator/filter";
 import "rxjs/add/operator/first";
+import { moveIn, fallIn, moveInLeft } from '../../router.animation';
 
 @Component({
   selector: 'app-container',
   templateUrl: './container.component.html',
-  styleUrls: ['./container.component.css']
+  styleUrls: ['./container.component.css'],
+  animations: [moveIn(), fallIn(), moveInLeft()],
+  host: {'[@moveIn]': ''}
 })
 export class ContainerComponent implements OnInit {
 
   current:any;
   url:string;
   name: any;
+  state: string = '';
 
   constructor(@Inject(DOCUMENT) private document: any,public af: AngularFire,private router: Router) {
     this.af.auth.subscribe(auth => {

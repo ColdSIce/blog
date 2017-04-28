@@ -2,6 +2,11 @@
 html, body {
     height: 100%;
     margin: 0;
+    overflow-x: hidden;
+}
+
+app-root{
+    overflow-x: hidden;
 }
 
 body{
@@ -201,7 +206,7 @@ body{
 }
 
 .post-container{
-    margin-top: 40px;
+    margin-top: 12px;
     padding-top: 40px;
     background-color: #FFF;
 }
@@ -264,10 +269,12 @@ body{
     border-radius:0px;
 }
 
+
 /*************LOGIN*******************/
 .login_back{
     height: 100%;
     background-color: #f8f8f8;
+    overflow: hidden;
 }
 
 .login_div{
@@ -522,7 +529,7 @@ body{
   position: relative;
   width: 120px;
   height: 120px;
-  margin: 100px auto 0;
+  margin: 20% auto 0;
   border: 2px solid #FF3B3F;
   border-radius: 50%;
 }
@@ -688,4 +695,41 @@ ol a:hover{
         opacity: 1;
         -webkit-transform: translateY(0%);
     }
+}
+
+.breadcrumb{
+    background-color: #FF3B3F;
+    border-radius: 0px;
+}
+
+.breadcrumb li a{
+    color: #fff;
+}
+
+.breadcrumb .active a:hover{
+    color: #fff;
+    text-decoration: none;
+    cursor: default;
+}
+
+.post-container .form-control{
+    color: #333;
+    transition: all .3s ease;
+}
+
+.post-container .form-control:active,
+.post-container .form-control:focus{
+    border: #ccc 1px solid;
+    box-shadow: none;
+    box-shadow: inset 0px -2px 0px 0px #FF3B3F;
+}
+
+#blog_search{
+    border-right: none;
+}
+
+#blog_search:active,
+#blog_search:focus{
+    border-right: none;
+    border-bottom: none;
 }

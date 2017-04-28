@@ -1,4 +1,10 @@
 <div class="container post-container">
+  <div class="col-md-12 sub-nav">
+    <ol class="breadcrumb">
+      <li><a id="blog_link" routerLink="/app/blog" routerLinkActive="active">Блог</a></li>
+      <li class="active"><a href="#">{{(post | async)?.title}}</a></li>      
+    </ol>
+  </div>
   <div class="col-md-8">
     <h1>{{(post | async)?.title}}</h1>
     <p class="lead">

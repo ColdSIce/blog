@@ -1,6 +1,6 @@
 
 
-<nav class="navbar navbar-default navbar-fixed-top">
+<nav [@fallIn]="state" class="navbar navbar-default navbar-fixed-top">
   <div class="container">
     <div class="container-fluid">
       <div class="navbar-header">
@@ -13,7 +13,7 @@
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#">{{ name.auth.displayName }}</a></li>
-        <li><a href="#" (click)="logout()">Выйти</a></li>
+        <li style="margin-right: 15px"><a href="#" (click)="logout()">Выйти</a></li>
       </ul>
     </div>
   </div>  
