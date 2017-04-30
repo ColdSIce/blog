@@ -733,3 +733,13 @@ ol a:hover{
     border-right: none;
     border-bottom: none;
 }
+
+.numbers{
+    background-color: #FF3B3F;
+    color: #fff;
+    text-align: center;
+}
+
+.numbers .col-md-3{
+    padding: 30px;
+}

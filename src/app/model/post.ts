@@ -11,8 +11,8 @@ export class Post{
     constructor(
         public author:string,
         public body:string,
-        public created:Date,
-        public updated:Date,
+        public created:number,
+        public updated:number,
         public intro:string,
         public likes:number,
         public main_img:string,

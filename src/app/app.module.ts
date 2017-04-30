@@ -17,6 +17,7 @@ import { AuthGuard } from './auth.service';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { PostComponent } from './components/post/post.component';
 import { PostService } from './services/post.service';
+import { CommentService } from './services/comment.service';
 
 export const firebaseconfig = {
   apiKey: "AIzaSyDE4CprlYX0gq8xxDfSSjxXj59vdskZt7c",
@@ -49,7 +50,8 @@ export const firebaseconfig = {
   ],
   providers: [
     AuthGuard,
-    PostService
+    PostService,
+    CommentService
   ],
   bootstrap: [AppComponent]
 })
