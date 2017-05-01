@@ -11,6 +11,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script>
     $(document).ready(function(){
+      var numStarted = false;
       $(window).scroll(function() {
         $(".slideanim").each(function(){
           var pos = $(this).offset().top;
@@ -18,6 +19,42 @@
           var winTop = $(window).scrollTop();
           if (pos < winTop + 600) {
             $(this).addClass("slide");
+          }
+        });
+        $(".slideanim2").each(function(){
+          var pos = $(this).offset().top;
+
+          var winTop = $(window).scrollTop();
+          if (pos < winTop + 600) {
+            $(this).addClass("slide");
+
+            if(!numStarted){
+              numStarted = true;
+              var backend_hours = parseInt($('#backend_hours').text()) - 30;
+              var frontend_hours = parseInt($('#frontend_hours').text()) - 30;
+              var projects_qty = parseInt($('#projects_qty').text()) - 30;
+              var me_years = parseInt($('#me_years').text()) - 30;
+
+              $('#backend_hours').text(backend_hours);
+              $('#frontend_hours').text(frontend_hours);
+              $('#projects_qty').text(projects_qty);
+              $('#me_years').text(me_years);
+
+              for (i = 0; i < 31; i++) {
+                doSetTimeout(i);
+              }
+
+              function doSetTimeout(i) {
+                let delay = parseInt(Math.pow(1.25, (i+2))+200*1);
+                setTimeout(function() { 
+                  $('#backend_hours').text(Math.abs(backend_hours + i));
+                  $('#frontend_hours').text(Math.abs(frontend_hours + i));
+                  $('#projects_qty').text(Math.abs(projects_qty + i));
+                  $('#me_years').text(Math.abs(me_years + i));
+                }, delay*1);
+              }
+            }
+            
           }
         });
         $('#lets_Scroll_Container').each(function(){
@@ -28,7 +65,7 @@
             $('#lets_Scroll_Container').hide();
           }
         });
-      });  
+      }); 
     });
   </script>
 </head>
