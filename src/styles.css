@@ -57,11 +57,25 @@ body{
 
 .bg-1 { 
     background-color: #FF3B3F;
+    background: url(assets/back2.png) 100% 100% no-repeat; 
+    background-size: cover;
     color: #ffffff;
-    padding-top: 120px;
+    margin-top: 40px;
+    padding-top: 80px;
     padding-bottom: 70px;
     position: relative;
     overflow: hidden;
+    height: 100%;
+}
+
+.bg-1 .col-md-5{
+    text-align: left;
+    padding-left: 40px;
+    padding-right: 30px;
+}
+
+.bg-1 h1{
+    margin-bottom: 15px;
 }
 
 .bg-1 h3{
@@ -71,77 +85,6 @@ body{
 
 .who{
     margin-bottom: 20px;
-}
-
-#parallax-container{
-    position: absolute;
-    left:50%;
-    top: 192px;
-    height: 0;
-    background-color: transparent;
-}
-
-.box{
-    position: absolute;
-    border-radius: 50%;
-    z-index: 100;
-    -webkit-backface-visibility: hidden;
-    -moz-backface-visibility:    hidden;
-    -ms-backface-visibility:     hidden;
-}
-			
-.box-1{
-    background-color: #FF3B3F;
-    top: -15px;
-    left: -175px;
-    width: 350px;
-    height: 350px;
-    animation: spin 3.5s linear infinite;
-}
-        
-.box-2{
-    background-color: #FF3B3F;
-    top: -90px;
-    left: -250px;
-    width: 500px;
-    height: 500px;
-    animation: spin 2.5s linear infinite;
-}
-        
-.box-3{
-    background-color: #FF3B3F;
-    top: -120px;
-    left: -280px;
-    width: 560px;
-    height: 560px;
-    animation: spin 1.5s linear infinite;
-}
-
-.box-4{
-    background-color: #FF3B3F;
-    top: -240px;
-    left: -400px;
-    width: 800px;
-    height: 800px;
-    animation: spin 4s linear infinite;
-}
-        
-.box-5{
-    background-color: #FF3B3F;
-    top: -265px;
-    left: -425px;
-    width: 850px;
-    height: 850px;
-    animation: spin 2s linear infinite;
-}
-        
-.box-6{
-    background-color: #FF3B3F;
-    top: -440px;
-    left: -600px;
-    width: 1200px;
-    height: 1200px;
-    animation: spin 5s linear infinite;
 }
 
 .spinner {
@@ -189,7 +132,7 @@ body{
 .bg-2 { 
     background-color: #474e5d;
     color: #ffffff;
-    padding-top: 70px;
+    padding-top: 10px;
     padding-bottom: 70px;
 }
 
@@ -198,6 +141,19 @@ body{
     color: #555555;
     padding-top: 70px;
     padding-bottom: 70px;
+}
+
+#go_down{
+    margin-top: 180px;
+}
+
+#what_am_i_do{
+    text-align: left;
+    padding-top: 35px;
+}
+
+#lets_Scroll_Container img{
+    width: 100px;    
 }
 
 #lets_Scroll_Container:hover{
@@ -610,7 +566,6 @@ ol a:hover{
 #vectors_title{
     text-align: center;
     padding: 15px;
-    padding-top: 60px;
 }
 
 .article-box{
