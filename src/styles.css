@@ -55,36 +55,51 @@ body{
     background-color: #FF3B3F;
 }
 
-.bg-1 { 
-    background-color: #FF3B3F;
-    background: url(assets/back2.png) 100% 100% no-repeat; 
-    background-size: cover;
-    color: #ffffff;
-    margin-top: 40px;
-    padding-top: 80px;
-    padding-bottom: 70px;
-    position: relative;
-    overflow: hidden;
+.about_pic{
+    font-family: 'Roboto', sans-serif;
+    padding: 0;
     height: 100%;
+    text-align: center;
+    background: url(assets/comp.jpg) bottom center no-repeat #FF3B3F;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
 }
 
-.bg-1 .col-md-5{
-    text-align: left;
-    padding-left: 40px;
-    padding-right: 30px;
+.about_pic .overlay{
+    background-color: #546E7A;
+    position:relative;
+    width: 100%;
+    height: 100%;
+    opacity: 0.4;
+    -moz-opacity: 40%;
+    -webkit-opacity: 40%;
+    z-index: 2;
 }
 
-.bg-1 h1{
-    margin-bottom: 15px;
+.intro-body{
+    color: #fff;
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 3;
+    text-shadow:
+    10px 15px 35px rgba(0,0,0,0.2);
 }
 
-.bg-1 h3{
-    position: relative;
-    z-index: 10000;
+.intro-body h1{
+    font-size: 100px;
 }
 
-.who{
-    margin-bottom: 20px;
+.intro-body p{
+    font-size: 26px;
+}
+
+.spin_container{
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%,-50%);
 }
 
 .spinner {
@@ -121,12 +136,6 @@ body{
     100% {
         transform: rotate(360deg);
     }
-}
-
-.me{
-    margin: 40px;
-    z-index: 1000;
-    position: relative;
 }
 
 .bg-2 { 

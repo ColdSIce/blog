@@ -11,13 +11,21 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script>
     $(document).ready(function(){
+
       var numStarted = false;
+      var horizont = $(window).height()*1 - 100;
+
+      $('#backend_hours').hide();
+      $('#frontend_hours').hide();
+      $('#projects_qty').hide();
+      $('#me_years').hide();
+
       $(window).scroll(function() {
         $(".slideanim").each(function(){
           var pos = $(this).offset().top;
 
           var winTop = $(window).scrollTop();
-          if (pos < winTop + 600) {
+          if (pos < winTop + horizont) {
             $(this).addClass("slide");
           }
         });
@@ -25,8 +33,14 @@
           var pos = $(this).offset().top;
 
           var winTop = $(window).scrollTop();
-          if (pos < winTop + 600) {
+          if (pos < winTop + horizont) {
+
             $(this).addClass("slide");
+
+            $('#backend_hours').show();
+            $('#frontend_hours').show();
+            $('#projects_qty').show();
+            $('#me_years').show();
 
             if(!numStarted){
               numStarted = true;
