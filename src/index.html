@@ -14,12 +14,7 @@
 
       var numStarted = false;
       var horizont = $(window).height()*1 - 100;
-
-      $('#backend_hours').hide();
-      $('#frontend_hours').hide();
-      $('#projects_qty').hide();
-      $('#me_years').hide();
-
+      
       $(window).scroll(function() {
         $(".slideanim").each(function(){
           var pos = $(this).offset().top;
@@ -36,11 +31,6 @@
           if (pos < winTop + horizont) {
 
             $(this).addClass("slide");
-
-            $('#backend_hours').show();
-            $('#frontend_hours').show();
-            $('#projects_qty').show();
-            $('#me_years').show();
 
             if(!numStarted){
               numStarted = true;
@@ -78,7 +68,9 @@
 <body>
   <app-root>
     <div class="spin_container">
-      <div class="spinner2 moon2"></div>
+      <div id="load_logo">VA</div>
+      <div class="spinner2 moon2">    
+      </div>
     </div>
   </app-root>
 </body>
