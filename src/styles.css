@@ -138,6 +138,15 @@ body{
     }
 }
 
+.trends{
+    text-align: center;
+}
+
+.trends h3{
+    margin-top: 70px;
+    margin-bottom: 25px;
+}
+
 .bg-2 { 
     background-color: #474e5d;
     color: #ffffff;
@@ -232,6 +241,13 @@ body{
 
 .form-control, .well{
     border-radius:0px;
+}
+
+
+/*******************SKILLS*********/
+.skills_row{
+    text-align: center;
+    padding: 30px;
 }
 
 
