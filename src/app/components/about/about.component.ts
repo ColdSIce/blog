@@ -1,5 +1,7 @@
 import { Component, OnInit, HostBinding } from '@angular/core';
 import { moveIn, fallIn, moveInLeft } from '../../router.animation';
+import { MessageService } from '../../services/message.service';
+import { Message } from '../../model/message';
 
 @Component({
   selector: 'app-about',
@@ -10,9 +12,16 @@ import { moveIn, fallIn, moveInLeft } from '../../router.animation';
 })
 export class AboutComponent implements OnInit {
 
-  constructor() { }
+  constructor(private ms:MessageService) { }
 
   ngOnInit() {
+  }
+
+  onSubmit(formData) {
+    if(formData.valid) {
+      this.ms.push(new Message(formData.value.name, formData.value.email, formData.value.message));
+    }
+    formData.reset();
   }
 
 }

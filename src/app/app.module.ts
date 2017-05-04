@@ -17,6 +17,7 @@ import { AuthGuard } from './auth.service';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { PostComponent } from './components/post/post.component';
 import { PostService } from './services/post.service';
+import { MessageService } from './services/message.service';
 import { CommentService } from './services/comment.service';
 
 export const firebaseconfig = {
@@ -51,7 +52,8 @@ export const firebaseconfig = {
   providers: [
     AuthGuard,
     PostService,
-    CommentService
+    CommentService,
+    MessageService
   ],
   bootstrap: [AppComponent]
 })
