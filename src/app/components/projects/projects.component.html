@@ -1,4 +1,10 @@
-<div class="container proj-container">
+<div *ngIf="isLoading" id="_loader">
+  <div id="load_logo"></div>
+    <div class="spinner2 moon2">    
+  </div>
+</div>
+
+<div *ngIf="!isLoading" class="container proj-container">
 
   <div class="row">
     <div class="col-lg-12">

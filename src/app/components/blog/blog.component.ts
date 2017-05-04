@@ -13,11 +13,16 @@ import { moveIn, fallIn, moveInLeft } from '../../router.animation';
 })
 export class BlogComponent implements OnInit {
 
+  isLoading = false;
   state: string = '';
   posts:FirebaseListObservable<Post[]>;
 
   constructor(private ps:PostService) {
+    this.isLoading = true;
     this.posts = ps.getPosts();
+    this.posts.subscribe(x => {
+      this.isLoading = false;
+    });
   }
 
   ngOnInit() {

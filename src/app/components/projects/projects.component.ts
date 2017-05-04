@@ -10,9 +10,13 @@ import { moveIn, fallIn, moveInLeft } from '../../router.animation';
 })
 export class ProjectsComponent implements OnInit {
 
+  isLoading = false;
   state: string = '';
 
-  constructor() { }
+  constructor() {
+    this.isLoading = true;
+    this.isLoading = false;
+  }
 
   ngOnInit() {
   }

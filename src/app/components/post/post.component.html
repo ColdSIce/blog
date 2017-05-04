@@ -1,4 +1,10 @@
-<div class="container post-container">
+<div *ngIf="isLoading" id="_loader">
+  <div id="load_logo"></div>
+    <div class="spinner2 moon2">    
+  </div>
+</div>
+
+<div *ngIf="!isLoading" class="container post-container">
   <div class="col-md-12 sub-nav">
     <ol class="breadcrumb">
       <li><a id="blog_link" routerLink="/app/blog" routerLinkActive="active">Блог</a></li>

@@ -20,8 +20,15 @@ export class AboutComponent implements OnInit {
   onSubmit(formData) {
     if(formData.valid) {
       this.ms.push(new Message(formData.value.name, formData.value.email, formData.value.message));
+      this.toast();
     }
     formData.reset();
+  }
+
+  toast() {
+      var x = document.getElementById("snackbar")
+      x.className = "show";
+      setTimeout(function(){ x.className = x.className.replace("show", ""); }, 2000);
   }
 
 }

@@ -16,6 +16,7 @@ import { moveIn, fallIn, moveInLeft } from '../../router.animation';
 })
 export class PostComponent implements OnInit {
 
+  isLoading = false;
   name:any;
   postKey:string;
   state: string = '';
@@ -28,12 +29,17 @@ export class PostComponent implements OnInit {
     private router:Router,
     private cs:CommentService) {
 
+    this.isLoading = true;
     route.params.subscribe((params: Params) => {
       this.postKey = params['key'];
       this.post = ps.getPost(params['key']);
     });
     route.params.subscribe((params: Params) => {
       this.comments = cs.getCommentsByBost(params['key']);
+    });
+
+    this.comments.subscribe(x => {
+      this.isLoading = false;
     });
 
     this.af.auth.subscribe(auth => {

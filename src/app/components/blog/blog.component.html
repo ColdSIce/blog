@@ -1,4 +1,10 @@
-<div class="container post-container">
+<div *ngIf="isLoading" id="_loader">
+  <div id="load_logo"></div>
+    <div class="spinner2 moon2">    
+  </div>
+</div>
+
+<div *ngIf="!isLoading" class="container post-container">
   <div class="col-md-12" style="margin-top: 30px">
     <h1>My blog bla bla bla</h1>
     <p class="lead">
@@ -22,10 +28,10 @@
     </div>
 
     <button class="btn btn-primary btn-pager">Еще →</button>
-</div>
+    </div>
 
-<div class="col-md-4">
+    <div class="col-md-4">
 
-</div>
+    </div>
 
 </div>
