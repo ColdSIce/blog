@@ -19,6 +19,8 @@ import { PostComponent } from './components/post/post.component';
 import { PostService } from './services/post.service';
 import { MessageService } from './services/message.service';
 import { CommentService } from './services/comment.service';
+import { PostManagementComponent } from './components/post-management/post-management.component';
+import { FroalaEditorModule, FroalaViewModule } from 'angular2-froala-wysiwyg';
 
 export const firebaseconfig = {
   apiKey: "AIzaSyDE4CprlYX0gq8xxDfSSjxXj59vdskZt7c",
@@ -40,14 +42,17 @@ export const firebaseconfig = {
     EmailComponent,
     SignupComponent,
     PageNotFoundComponent,
-    PostComponent
+    PostComponent,
+    PostManagementComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     RoutesModule,
-    AngularFireModule.initializeApp(firebaseconfig)
+    AngularFireModule.initializeApp(firebaseconfig),
+    FroalaEditorModule.forRoot(),
+    FroalaViewModule.forRoot()
   ],
   providers: [
     AuthGuard,

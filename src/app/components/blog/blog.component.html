@@ -6,9 +6,9 @@
 
 <div *ngIf="!isLoading" class="container post-container">
   <div class="col-md-12" style="margin-top: 30px">
-    <h1>My blog bla bla bla</h1>
+    <h1>Мой блог</h1>
     <p class="lead">
-        by <a href="#">Start Bootstrap</a>
+        <a [routerLink]="['/app/post-management']" routerLinkActive="active">Новая статья</a>
     </p>
     <hr>
   </div>
@@ -20,7 +20,7 @@
                 {{post?.title}}
             </h2>
             <h3 class="post-subtitle">
-                {{post?.subtitle}}
+                {{post?.intro}}
             </h3>
         </a>
         <p class="post-meta">Опубликовано:  <a href="#">{{post?.author}}</a>  {{post?.created | date: 'dd-MM-yyyy HH:mm'}}</p>

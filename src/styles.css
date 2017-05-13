@@ -415,6 +415,7 @@ body{
     color: #777;
 }
 
+.custom_form_group input,
 .credentials  input,
 .bg-2 input,
 .bg-2 textarea{
@@ -428,10 +429,13 @@ body{
     margin-bottom: 4px;
 }
 
+
 .bg-2 textarea{
     height: 120px;
 }
 
+.custom_form_group input:active,
+.custom_form_group input:focus,
 .credentials  input:active,
 .credentials  input:focus,
 .bg-2 input:active,
@@ -978,4 +982,23 @@ ol a:hover{
     height: 100%;
     position: absolute;
     top: 0;
+}
+
+.btn-link{
+    color: #FF3B3F;
+    outline: none;
+    box-shadow: none;
+}
+
+.btn-link:hover{
+    color: #FA393A;
+    outline: none;
+    box-shadow: none;
+}
+
+.btn-link:active,
+.btn-link:focus{
+    color: #FF3B3F;
+    outline: none;
+    box-shadow: none;
 }

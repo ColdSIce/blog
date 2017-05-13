@@ -1,0 +1,42 @@
+<div *ngIf="isLoading" id="_loader">
+  <div id="load_logo"></div>
+    <div class="spinner2 moon2">    
+  </div>
+</div>
+
+<div *ngIf="!isLoading" class="container proj-container">
+  <h1>Новая статья</h1>
+  <form #formData='ngForm' (ngSubmit)="onSubmit(formData)">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="form-group custom_form_group">
+            <label for="title">Заголовок</label>
+            <input id="title" (ngModel)="model.title" required name="title" type="text" placeholder="" class="form-control">
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="form-group custom_form_group">
+            <label for="intro">Интро</label>
+            <input id="intro" (ngModel)="model.intro" required name="intro" type="text" placeholder="" class="form-control">
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <label for="content">Контент</label>
+        <div id="content" [froalaEditor] [(froalaModel)]="editorContent"></div> 
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-md-12">
+        <button class="btn btn-primary" type="submit">Отправить</button>
+        <button class="btn btn-link" type="button" (click)="clear(formData)">Очистить</button>
+      </div>
+    </div>
+  </form>  
+</div>
+
+<div id="snackbar">Опубликовано!</div>

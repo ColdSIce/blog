@@ -11,18 +11,16 @@
       <li class="active"><a href="#">{{(post | async)?.title}}</a></li>      
     </ol>
   </div>
-  <div class="col-md-8" style="padding-bottom:50px">
+  <div class="col-md-8" style="padding-bottom:50px; overflow:hidden;">
     <h1>{{(post | async)?.title}}</h1>
     <p class="lead">
         Автор <a href="#">{{(post | async)?.author}}</a>
     </p>
     <hr>
-    <p><span class="glyphicon glyphicon-time"></span> Опубликовано: {{(post | async)?.created | date: 'dd-MM-yyyy hh:mm'}}</p>
-    <hr>
-    <img class="img-responsive" src="http://placehold.it/900x300" alt="">
+    <p><span class="glyphicon glyphicon-time"></span> Опубликовано: {{(post | async)?.created | date: 'dd-MM-yyyy HH:mm'}}</p>
     <hr>
     <p class="lead">{{(post | async)?.intro}}</p>
-    <p>{{(post | async)?.body}}</p>
+    <div [froalaView]="postBody"></div>
     <hr>
     <div class="well">
         <h4>Оставить комментарий:</h4>

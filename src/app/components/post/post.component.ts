@@ -18,6 +18,7 @@ export class PostComponent implements OnInit {
 
   isLoading = false;
   name:any;
+  postBody:any;
   postKey:string;
   state: string = '';
   post:FirebaseObjectObservable<Post>;
@@ -33,6 +34,9 @@ export class PostComponent implements OnInit {
     route.params.subscribe((params: Params) => {
       this.postKey = params['key'];
       this.post = ps.getPost(params['key']);
+      this.post.subscribe(p => {
+        this.postBody = p.body;
+      })
     });
     route.params.subscribe((params: Params) => {
       this.comments = cs.getCommentsByBost(params['key']);
