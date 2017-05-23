@@ -20,7 +20,7 @@
     <p><span class="glyphicon glyphicon-time"></span> Опубликовано: {{(post | async)?.created | date: 'dd-MM-yyyy HH:mm'}}</p>
     <hr>
     <p class="lead">{{(post | async)?.intro}}</p>
-    <div [froalaView]="postBody"></div>
+    <markdown [data]="(post | async)?.body"></markdown>
     <hr>
     <div class="well">
         <h4>Оставить комментарий:</h4>

@@ -1,4 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
+
 html, body {
     height: 100%;
     margin: 0;
@@ -416,6 +417,7 @@ body{
 }
 
 .custom_form_group input,
+.custom_form_group textarea,
 .credentials  input,
 .bg-2 input,
 .bg-2 textarea{
@@ -429,11 +431,17 @@ body{
     margin-bottom: 4px;
 }
 
+.custom_form_group textarea{
+    height: 100px;
+}
+
 
 .bg-2 textarea{
     height: 120px;
 }
 
+.custom_form_group textarea:active,
+.custom_form_group textarea:focus,
 .custom_form_group input:active,
 .custom_form_group input:focus,
 .credentials  input:active,
@@ -674,7 +682,14 @@ ol a:hover{
 #blog_search{
     height: 40px;
 }
-
+.modal-dialog, .modal-content{
+    border-radius: 0px !important;
+    border: none !important;
+}
+.modal-body{
+    height: 500px;
+    overflow-y: scroll;
+}
 /*****ARTICLES*****/
 #vectors_title{
     text-align: center;

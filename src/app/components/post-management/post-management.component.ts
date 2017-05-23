@@ -13,10 +13,10 @@ import { moveIn, fallIn, moveInLeft } from '../../router.animation';
 })
 export class PostManagementComponent implements OnInit {
 
-  editorContent = '';
   name:any;
   tests:any[];
   isLoading = false;
+  preview = '';
 
   constructor(private af: AngularFire, private ps:PostService) { }
 
@@ -37,7 +37,7 @@ export class PostManagementComponent implements OnInit {
     if(formData.valid) {
       let post = new Post(
         this.name.auth.displayName,
-        this.editorContent,
+        formData.value.content,
         new Date().getTime(),
         new Date().getTime(),
         formData.value.intro,
@@ -50,7 +50,7 @@ export class PostManagementComponent implements OnInit {
       this.toast();
     }
     formData.reset();
-    this.editorContent = '';
+    this.preview = '';
   }
 
   toast() {
@@ -61,7 +61,11 @@ export class PostManagementComponent implements OnInit {
 
   clear(formData){
     formData.reset();
-    this.editorContent = '';
+    this.preview = '';
+  }
+
+  updatePreview(formData){
+    this.preview = formData.value.content;
   }
 
 }

@@ -20,7 +20,7 @@ import { PostService } from './services/post.service';
 import { MessageService } from './services/message.service';
 import { CommentService } from './services/comment.service';
 import { PostManagementComponent } from './components/post-management/post-management.component';
-import { FroalaEditorModule, FroalaViewModule } from 'angular2-froala-wysiwyg';
+import { MarkdownModule } from 'angular2-markdown';
 
 export const firebaseconfig = {
   apiKey: "AIzaSyDE4CprlYX0gq8xxDfSSjxXj59vdskZt7c",
@@ -51,8 +51,7 @@ export const firebaseconfig = {
     HttpModule,
     RoutesModule,
     AngularFireModule.initializeApp(firebaseconfig),
-    FroalaEditorModule.forRoot(),
-    FroalaViewModule.forRoot()
+    MarkdownModule.forRoot()
   ],
   providers: [
     AuthGuard,
