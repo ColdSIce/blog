@@ -12,6 +12,7 @@ import { PostComponent } from '../../components/post/post.component';
 import { PageNotFoundComponent } from '../../components/page-not-found/page-not-found.component';
 import { AuthGuard } from '../../auth.service';
 import { PostManagementComponent } from '../../components/post-management/post-management.component';
+import { ImagesManagementComponent } from '../../components/images-management/images-management.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch:'full' },
@@ -24,6 +25,7 @@ const routes: Routes = [
     {path: 'projects', component: ProjectsComponent},
     {path: 'post/:key', component: PostComponent},
     {path: 'post-management', component: PostManagementComponent},
+    {path: 'images-management', component: ImagesManagementComponent},
   ] },
   { path: '**', component: PageNotFoundComponent }
 ];

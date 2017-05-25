@@ -690,6 +690,14 @@ ol a:hover{
     height: 500px;
     overflow-y: scroll;
 }
+.image_well{
+    margin-top: 10px;
+    margin-bottom: 0px;
+    padding: 6px 12px;
+    padding-top: 10px;
+    min-height: 0px;
+    word-break: break-all;
+}
 /*****ARTICLES*****/
 #vectors_title{
     text-align: center;
@@ -1016,4 +1024,74 @@ ol a:hover{
     color: #FF3B3F;
     outline: none;
     box-shadow: none;
+}
+.custom-file-input{
+    outline: none;
+    color: #333;
+    padding: 5px;
+    border-bottom: 2px solid #fff;
+    cursor: pointer;
+    transition: all .3s ease;
+}
+.custom-file-input:hover{
+    border-bottom: 2px solid #FF3B3F;
+}
+.custom-file-input:active,
+.custom-file-input:active::before,
+.custom-file-input:focus,
+.custom-file-input:focus::before{
+  outline: none !important;
+}
+.custom-file-input::-webkit-file-upload-button {
+  visibility: hidden;
+}
+.custom-file-input::before {
+  content: 'Обзор...';
+  color: #777;
+  display: inline-block;
+  background: #fff;
+  margin: -3px 0 -3px -3px;
+  padding: 5px 20px;
+  outline: none;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  cursor: pointer;
+  text-align: center;
+  text-shadow: 1px 1px #fff;
+  font-weight: 700;
+  font-size: 10pt;
+  transition: all .3s ease;
+}
+.custom-file-input:hover::before {
+  color: #FF3B3F;
+}
+#send_image_btn{
+    margin-top: 25px;
+}
+.uploaded_img_well_row{
+    margin-top: 40px;
+}
+.upload_well{
+    word-break: break-all;
+}
+.img_preview img{
+    width: 100%;
+}
+.file_input_row input{
+    width: 100%;
+}
+.post_management_submenu{
+    padding: 0;
+}
+.right_submenu_item{
+    position: absolute;
+    right: 15px;
+    top:8px;
+    color: #fff;
+    cursor: pointer;
+}
+.right_submenu_item:hover,
+.right_submenu_item:active,
+.right_submenu_item:focus{
+    color: #fff;
 }

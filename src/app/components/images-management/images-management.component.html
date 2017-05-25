@@ -1,0 +1,14 @@
+<div *ngIf="isLoading" id="_loader">
+  <div id="load_logo"></div>
+    <div class="spinner2 moon2">    
+  </div>
+</div>
+
+<div *ngIf="!isLoading" class="container proj-container" style="margin-top: 14px;">
+  <div class="col-md-12 sub-nav post_management_submenu">
+    <ol class="breadcrumb">
+      <li><a id="blog_link" routerLink="/app/blog" routerLinkActive="active">Блог</a></li>
+      <li class="active"><a>Управление изображениями</a></li> 
+    </ol>
+  </div>
+</div> 

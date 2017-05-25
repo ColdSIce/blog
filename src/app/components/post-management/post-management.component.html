@@ -4,9 +4,16 @@
   </div>
 </div>
 
-<div *ngIf="!isLoading" class="container proj-container">
-  <h1>Новая статья</h1>
-  <form #formData='ngForm' (ngSubmit)="onSubmit(formData)">
+<div *ngIf="!isLoading" class="container proj-container" style="margin-top: 14px;">
+  <div class="col-md-12 sub-nav post_management_submenu">
+    <ol class="breadcrumb">
+      <li><a id="blog_link" routerLink="/app/blog" routerLinkActive="active">Блог</a></li>
+      <li class="active"><a>Новая статья</a></li> 
+    </ol>
+    <a class="right_submenu_item" routerLink="/app/images-management" routerLinkActive="active">Управление изображениями</a> 
+  </div>
+  <form #formData='ngForm' (ngSubmit)="onSubmit(formData)" class="col-md-8">
+    <h2>Новая статья</h2>
     <div class="row">
       <div class="col-md-12">
         <div class="form-group custom_form_group">
@@ -40,25 +47,50 @@
       </div>
     </div>
     <div id="preview" class="modal fade" role="dialog">
-  <div class="modal-dialog modal-lg">
+      <div class="modal-dialog modal-lg">
 
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Предварительный просмотр</h4>
-      </div>
-      <div class="modal-body">
-        <markdown [data]="preview"></markdown>
-      </div>
-      <div class="modal-footer">
-        <button class="btn btn-primary" type="submit">Сохранить</button>
-        <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Предварительный просмотр</h4>
+          </div>
+          <div class="modal-body">
+            <markdown [data]="preview"></markdown>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-primary" type="submit">Сохранить</button>
+            <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
+          </div>
+        </div>
+
       </div>
     </div>
-
-  </div>
-</div>
   </form>  
+  <div class="col-md-4">
+    <h2>Загрузить изображение</h2>
+    <div class="row file_input_row">
+     <div class="col-md-12">
+        <div class="form-group">
+          <label for="upload" style="color:#fff;margin-bottom: 10px;">.</label>
+          <input type="file" id="upload" class="custom-file-input">
+        </div> 
+        <button type="button" id="send_image_btn" class="btn btn-primary" (click)="upload()">Загрузить</button>
+        <div *ngIf="uploadedUrl" class="row uploaded_img_well_row">
+          <div class="col-md-12">
+            <div class="well upload_well">
+              <p>Ссылка</p>
+              <p>{{uploadedUrl}}</p>
+            </div>
+          </div>
+        </div>
+        <div *ngIf="uploadedUrl" class="row">
+          <div class="col-md-12 img_preview">
+            <p>Предварительный просмотр</p>
+            <img [src]="uploadedUrl" alt="">
+          </div>
+        </div>  
+    </div>
+  </div>
 </div>
 
 <div id="snackbar">Опубликовано!</div>

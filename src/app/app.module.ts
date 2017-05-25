@@ -21,6 +21,7 @@ import { MessageService } from './services/message.service';
 import { CommentService } from './services/comment.service';
 import { PostManagementComponent } from './components/post-management/post-management.component';
 import { MarkdownModule } from 'angular2-markdown';
+import { ImagesManagementComponent } from './components/images-management/images-management.component';
 
 export const firebaseconfig = {
   apiKey: "AIzaSyDE4CprlYX0gq8xxDfSSjxXj59vdskZt7c",
@@ -43,7 +44,8 @@ export const firebaseconfig = {
     SignupComponent,
     PageNotFoundComponent,
     PostComponent,
-    PostManagementComponent
+    PostManagementComponent,
+    ImagesManagementComponent
   ],
   imports: [
     BrowserModule,

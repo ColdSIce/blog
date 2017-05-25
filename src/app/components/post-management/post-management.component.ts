@@ -1,5 +1,5 @@
-import { Component, OnInit, HostBinding } from '@angular/core';
-import {AngularFire, FirebaseListObservable} from 'angularfire2';
+import { Component, OnInit, HostBinding, Inject } from '@angular/core';
+import { AngularFire, FirebaseListObservable, FirebaseApp } from 'angularfire2';
 import { Post } from '../../model/post';
 import { PostService } from '../../services/post.service';
 import { moveIn, fallIn, moveInLeft } from '../../router.animation';
@@ -17,11 +17,13 @@ export class PostManagementComponent implements OnInit {
   tests:any[];
   isLoading = false;
   preview = '';
+  uploadedUrl = "";
 
-  constructor(private af: AngularFire, private ps:PostService) { }
+  constructor(@Inject(FirebaseApp) private firebaseApp: firebase.app.App, private af: AngularFire, private ps:PostService) { }
 
   ngOnInit() {
     this.isLoading = true;  
+    document.getElementById("blog_link").parentElement.classList.add('active');
     this.af.database.list('test').subscribe(list => {
       this.tests = list;
       this.af.auth.subscribe(auth => {
@@ -66,6 +68,21 @@ export class PostManagementComponent implements OnInit {
 
   updatePreview(formData){
     this.preview = formData.value.content;
+  }
+
+  upload(){
+    let storageRef = this.firebaseApp.storage().ref();
+    let input:HTMLInputElement = <HTMLInputElement>document.getElementById("upload");
+    if(input.files[0]){
+      this.isLoading = true; 
+      let path = '/images/' + input.files[0].name;
+      let iRef = storageRef.child(path);
+      iRef.put(input.files[0]).then((snapshot) => {
+        this.uploadedUrl = snapshot.downloadURL;
+        input.value = "";
+        this.isLoading = false; 
+      });
+    }
   }
 
 }
