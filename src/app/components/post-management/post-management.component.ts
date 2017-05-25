@@ -79,6 +79,7 @@ export class PostManagementComponent implements OnInit {
       let iRef = storageRef.child(path);
       iRef.put(input.files[0]).then((snapshot) => {
         this.uploadedUrl = snapshot.downloadURL;
+        this.af.database.list(`/images`).push({ path: path, filename: input.files[0].name });
         input.value = "";
         this.isLoading = false; 
       });
