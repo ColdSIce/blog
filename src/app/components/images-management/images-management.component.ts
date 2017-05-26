@@ -33,7 +33,6 @@ export class ImagesManagementComponent implements OnInit {
         itemList.map( item => {
             var pathReference = storage.ref(item.path);
             let result = {$key: item.$key, downloadURL: pathReference.getDownloadURL(), path: item.path, filename: item.filename};
-            console.log(result);
             return result;
         })
     );
@@ -59,12 +58,13 @@ export class ImagesManagementComponent implements OnInit {
     this.isLoading = true; 
     let storagePath = image.path;
     let referencePath = `/images` + image.$key;
-    firebase.storage().ref().child(storagePath).delete()
+    this.firebaseApp.storage().ref().child(storagePath).delete()
     .then(
         () => {this.isLoading = false;},
         (error) => console.error("Error deleting stored file",storagePath)
     );
-    this.af.database.object(referencePath).remove();
+    console.log(referencePath);
+    this.af.database.list('/images').remove(image.$key);
   }
 
 }

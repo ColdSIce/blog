@@ -18,7 +18,7 @@
     <div class="col-md-6">
       <div class="row file_input_row">
         <div class="form-group">
-          <input type="file" id="upload" class="custom-file-input">
+          <input type="file" id="upload" class="custom-file-input" style="margin-top: 4px;">
         </div> 
       </div>
     </div>
@@ -28,7 +28,13 @@
   </div>
   <div class="row">
     <div *ngFor="let img of imageList | async" class="col-md-3 images_management_item">
-      <img [src]="img.downloadURL | async" alt="">
+      <img [hidden]="!(img.downloadURL | async)" [src]="img.downloadURL | async" alt="">
+      <div class="img_overlay" (click)="delete(img)">
+        <i class="fa fa-2 fa-trash-o" aria-hidden="true"></i>
+      </div>
     </div>
+
+
+  
   </div>
 </div> 
