@@ -5,16 +5,39 @@
 </div>
 
 <div *ngIf="!isLoading" class="container post-container">
-  <div class="col-md-12" style="margin-top: 30px">
+
+    <div class="col-md-12 sub-nav post_management_submenu">
+        <ol class="breadcrumb">
+            <li class="active"><a>Блог</a></li> 
+        </ol>
+        <ul class="sub_nav">
+            <li>
+                <a class="" routerLink="/app/images-management" routerLinkActive="active">Управление изображениями</a>  
+            </li>
+            <li>
+                <a class="" routerLink="/app/post-management" routerLinkActive="active">Новая статья</a>
+            </li>
+        </ul>
+ 
+    </div>
+
+  <div class="col-md-12">
     <h1>Мой блог</h1>
-    <p class="lead">
-        <a [routerLink]="['/app/post-management']" routerLinkActive="active">Новая статья</a>
-    </p>
     <hr>
   </div>
 
   <div class="col-lg-8">
     <div class="post-preview" *ngFor="let post of posts | async">
+         <i class="fa fa-2 fa-trash-o remove_post_link" 
+            aria-hidden="true" 
+            title="Удалить" 
+            data-toggle="modal" 
+            data-target="#deleteModal"
+            (click)="select(post?.$key, post?.title)"></i>
+        <i class="fa fa-2 fa-pencil remove_post_link"
+            style="margin-right: 10px;"
+            aria-hidden="true" 
+            title="Редактировать"></i>
         <a [routerLink]="['/app/post', post.$key]" routerLinkActive="active">
             <h2 class="post-title">
                 {{post?.title}}
@@ -25,13 +48,81 @@
         </a>
         <p class="post-meta">Опубликовано:  <a href="#">{{post?.author}}</a>  {{post?.created | date: 'dd-MM-yyyy HH:mm'}}</p>
         <hr>
+       </div>
+       <button class="btn btn-primary btn-pager">Еще →</button>
     </div>
 
-    <button class="btn btn-primary btn-pager">Еще →</button>
+     <div class="col-md-4">
+    <!-- Blog Search Well -->
+    <div class="well">
+        <h4>Blog Search</h4>
+        <div class="input-group">
+            <input id="blog_search" type="text" class="form-control">
+            <span class="input-group-btn">
+                <button class="btn btn-primary" type="button">
+                    <span class="glyphicon glyphicon-search"></span>
+            </button>
+            </span>
+        </div>
+        <!-- /.input-group -->
     </div>
 
-    <div class="col-md-4">
-
+    <!-- Blog Categories Well -->
+    <div class="well">
+        <h4>Blog Categories</h4>
+        <div class="row">
+            <div class="col-lg-6">
+                <ul class="list-unstyled">
+                    <li><a href="#">Category Name</a>
+                    </li>
+                    <li><a href="#">Category Name</a>
+                    </li>
+                    <li><a href="#">Category Name</a>
+                    </li>
+                    <li><a href="#">Category Name</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-lg-6">
+                <ul class="list-unstyled">
+                    <li><a href="#">Category Name</a>
+                    </li>
+                    <li><a href="#">Category Name</a>
+                    </li>
+                    <li><a href="#">Category Name</a>
+                    </li>
+                    <li><a href="#">Category Name</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- /.row -->
     </div>
 
+     <!-- Side Widget Well -->
+    <div class="well">
+        <h4>Side Widget Well</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore, perspiciatis adipisci accusamus laudantium odit aliquam repellat tempore quos aspernatur vero.</p>
+    </div>
+
+</div>
+
+<div id="deleteModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Удалить статью?</h4>
+      </div>
+      <div class="modal-body">
+        <h4>{{selectedTitle}}</h4>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="delete()">Удалить</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal" (click)="cancel()">Отмена</button>
+      </div>
+    </div>
+
+  </div>
 </div>

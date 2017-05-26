@@ -29,12 +29,9 @@
   <div class="row">
     <div *ngFor="let img of imageList | async" class="col-md-3 images_management_item">
       <img [hidden]="!(img.downloadURL | async)" [src]="img.downloadURL | async" alt="">
-      <div class="img_overlay" (click)="delete(img)">
+      <div class="img_overlay" (click)="delete(img)" title="Удалить изображение">
         <i class="fa fa-2 fa-trash-o" aria-hidden="true"></i>
       </div>
     </div>
-
-
-  
   </div>
 </div> 

@@ -686,7 +686,7 @@ ol a:hover{
     border-radius: 0px !important;
     border: none !important;
 }
-.modal-body{
+#preview .modal-body{
     height: 500px;
     overflow-y: scroll;
 }
@@ -1083,6 +1083,13 @@ ol a:hover{
 .post_management_submenu{
     padding: 0;
 }
+.left_submenu_item{
+    position: absolute;
+    left: 15px;
+    top:8px;
+    color: #fff;
+    cursor: pointer;
+}
 .right_submenu_item{
     position: absolute;
     right: 15px;
@@ -1099,9 +1106,7 @@ ol a:hover{
     width: 100%;
 }
 .images_management_item{
-    padding: 0;
-    margin-right: 15px;
-    margin-left: 15px;
+    padding: 15px;
 }
 .img_up_row{
     border-bottom: 1px #ccc solid;
@@ -1110,13 +1115,13 @@ ol a:hover{
     margin-bottom: 30px;
 }
 .images_management_item .img_overlay{
-    background-color: #FF3B3F; 
+    background-color: rgba(255,255,255, .4); 
     position: absolute;
     right: 0px;
     top: 0px;
     height: 100%;
     width: 100%;
-    color: #fff;
+    color: #FF3B3F;
     font-size: 4em;
     text-align: center;
     opacity: 0;
@@ -1132,4 +1137,33 @@ ol a:hover{
 }
 .images_management_item:hover .img_overlay{
     opacity: 1;
+}
+.remove_post_link{
+    color: #999;
+    float: right;
+    cursor: pointer;
+    position: relative;
+    top:4px;
+    font-size: 2em;
+}
+.remove_post_link:hover{
+    color: #FF3B3F;
+}
+.sub_nav{
+    position: absolute;
+    top:8px;
+    right: 0px;
+    list-style: none;
+}
+.sub_nav li{
+    float: right;
+    margin-right: 15px;
+}
+.sub_nav li a,
+.sub_nav li a:hover,
+.sub_nav li a:active,
+.sub_nav li a:focus{
+    color: #fff;
+    cursor: pointer;
+    transition: all .3s ease;
 }

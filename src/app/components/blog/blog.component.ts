@@ -16,6 +16,8 @@ export class BlogComponent implements OnInit {
   isLoading = false;
   state: string = '';
   posts:FirebaseListObservable<Post[]>;
+  selectedKey:string = null;
+  selectedTitle:string;
 
   constructor(private ps:PostService) {
     this.isLoading = true;
@@ -26,6 +28,22 @@ export class BlogComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  delete(){
+    if(this.selectedKey) this.posts.remove(this.selectedKey);
+    this.selectedKey = null;
+    this.selectedTitle = null;
+  }
+
+  select(key:string, title:string){
+    this.selectedKey = key;
+    this.selectedTitle = title;
+  }
+
+  cancel(){
+    this.selectedKey = null;
+    this.selectedTitle = null;
   }
 
 }
