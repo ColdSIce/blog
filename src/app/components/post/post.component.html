@@ -10,6 +10,14 @@
       <li><a id="blog_link" routerLink="/app/blog" routerLinkActive="active">Блог</a></li>
       <li class="active"><a href="#">{{(post | async)?.title}}</a></li>      
     </ol>
+     <ul class="sub_nav" style="margin-right: 15px;">
+        <li>
+            <a (click)="edit()">Редактировать</a>  
+        </li>
+        <li>
+            <a data-toggle="modal" data-target="#deleteModal">Удалить</a>
+        </li>
+    </ul>
   </div>
   <div class="col-md-8" style="padding-bottom:50px; overflow:hidden;">
     <h1>{{(post | async)?.title}}</h1>
@@ -95,6 +103,25 @@
     <div class="well">
         <h4>Side Widget Well</h4>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore, perspiciatis adipisci accusamus laudantium odit aliquam repellat tempore quos aspernatur vero.</p>
+    </div>
+
+  </div>
+</div>
+<div id="deleteModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Удалить статью?</h4>
+      </div>
+      <div class="modal-body">
+        <h4>{{selectedTitle}}</h4>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="delete()">Удалить</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Отмена</button>
+      </div>
     </div>
 
   </div>

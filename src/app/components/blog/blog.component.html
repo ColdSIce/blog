@@ -6,13 +6,13 @@
 
 <div *ngIf="!isLoading" class="container post-container">
 
-    <div class="col-md-12 sub-nav post_management_submenu">
+    <div class="col-md-12 sub-nav post_management_submenu" style="padding-right: 15px;padding-left: 15px;">
         <ol class="breadcrumb">
             <li class="active"><a>Блог</a></li> 
         </ol>
         <ul class="sub_nav">
             <li>
-                <a class="" routerLink="/app/images-management" routerLinkActive="active">Управление изображениями</a>  
+                <a class="" routerLink="/app/images-management" routerLinkActive="active" style="margin-right: 15px;">Управление изображениями</a>  
             </li>
             <li>
                 <a class="" routerLink="/app/post-management" routerLinkActive="active">Новая статья</a>
@@ -37,7 +37,8 @@
         <i class="fa fa-2 fa-pencil remove_post_link"
             style="margin-right: 10px;"
             aria-hidden="true" 
-            title="Редактировать"></i>
+            title="Редактировать"
+            (click)="edit(post?.$key)"></i>
         <a [routerLink]="['/app/post', post.$key]" routerLinkActive="active">
             <h2 class="post-title">
                 {{post?.title}}

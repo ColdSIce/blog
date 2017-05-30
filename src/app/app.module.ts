@@ -22,6 +22,7 @@ import { CommentService } from './services/comment.service';
 import { PostManagementComponent } from './components/post-management/post-management.component';
 import { MarkdownModule } from 'angular2-markdown';
 import { ImagesManagementComponent } from './components/images-management/images-management.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 export const firebaseconfig = {
   apiKey: "AIzaSyDE4CprlYX0gq8xxDfSSjxXj59vdskZt7c",
@@ -52,6 +53,7 @@ export const firebaseconfig = {
     FormsModule,
     HttpModule,
     RoutesModule,
+    ReactiveFormsModule,
     AngularFireModule.initializeApp(firebaseconfig),
     MarkdownModule.forRoot()
   ],

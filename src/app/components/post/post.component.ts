@@ -23,6 +23,8 @@ export class PostComponent implements OnInit {
   state: string = '';
   post:FirebaseObjectObservable<Post>;
   comments:FirebaseListObservable<Comment[]>;
+  selectedKey:string = null;
+  selectedTitle:string;
 
   constructor(private af:AngularFire,
     private ps:PostService, 
@@ -64,5 +66,16 @@ export class PostComponent implements OnInit {
       this.cs.push(new Comment(this.name.auth.displayName, (new Date()).getTime(), this.postKey, formData.value.comment));
     }
     formData.reset();
+  }
+
+  edit(){
+    this.post.subscribe(p => {
+      this.router.navigate(['/app/post-management', {'key':this.postKey}]);
+    }); 
+  }
+
+  delete(){
+    this.ps.getPosts().remove(this.postKey);
+    this.router.navigate(['/app/blog']);
   }
 }

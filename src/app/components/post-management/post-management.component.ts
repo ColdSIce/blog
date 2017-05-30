@@ -1,8 +1,10 @@
 import { Component, OnInit, HostBinding, Inject } from '@angular/core';
-import { AngularFire, FirebaseListObservable, FirebaseApp } from 'angularfire2';
+import { AngularFire, FirebaseListObservable, FirebaseApp, FirebaseObjectObservable } from 'angularfire2';
 import { Post } from '../../model/post';
 import { PostService } from '../../services/post.service';
 import { moveIn, fallIn, moveInLeft } from '../../router.animation';
+import { ActivatedRoute } from '@angular/router';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-post-management',
@@ -18,40 +20,69 @@ export class PostManagementComponent implements OnInit {
   isLoading = false;
   preview = '';
   uploadedUrl = "";
+  key:string;
+  ngForm:FormGroup;
+  
 
-  constructor(@Inject(FirebaseApp) private firebaseApp: firebase.app.App, private af: AngularFire, private ps:PostService) { }
+  constructor(@Inject(FirebaseApp) private firebaseApp: firebase.app.App, private af: AngularFire, private ps:PostService,private route: ActivatedRoute, private fb: FormBuilder) {
+
+  }
+
 
   ngOnInit() {
     this.isLoading = true;  
+
     document.getElementById("blog_link").parentElement.classList.add('active');
     this.af.database.list('test').subscribe(list => {
       this.tests = list;
       this.af.auth.subscribe(auth => {
         if(auth) {
           this.name = auth;
-          this.isLoading = false;
+
+          this.route.params.subscribe(params => {
+            if(params['key']){
+              this.key = params['key'];
+              this.ps.getPost(this.key).subscribe(p => {
+                this.ngForm = this.fb.group({
+                  title: p.title,
+                  intro: p.intro,
+                  content: p.body
+                });
+                this.preview = p.body;
+                this.isLoading = false;
+              });
+            }else{
+              this.ngForm = this.fb.group({
+                title: '',
+                intro: '',
+                content: ''
+              });
+              this.preview = '';
+              this.isLoading = false;
+            }
+          });
         }
       });    
     })
   }
 
-  onSubmit(formData) {
-    if(formData.valid) {
+  onSubmit() {
+
       let post = new Post(
         this.name.auth.displayName,
-        formData.value.content,
+        this.ngForm.value.content,
         new Date().getTime(),
         new Date().getTime(),
-        formData.value.intro,
+        this.ngForm.value.intro,
         0,
         "",
         [],
-        formData.value.title
+        this.ngForm.value.title
       );
       this.ps.push(post);
       this.toast();
-    }
-    formData.reset();
+    
+    this.ngForm.reset();
     this.preview = '';
   }
 
@@ -61,8 +92,8 @@ export class PostManagementComponent implements OnInit {
       setTimeout(function(){ x.className = x.className.replace("show", ""); }, 2000);
   }
 
-  clear(formData){
-    formData.reset();
+  clear(){
+    this.ngForm.reset();
     this.preview = '';
   }
 

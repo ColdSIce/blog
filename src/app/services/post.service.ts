@@ -21,4 +21,5 @@ export class PostService{
     push(post:Post){
         this.af.database.list('/posts').push(post);
     }
+
 }    

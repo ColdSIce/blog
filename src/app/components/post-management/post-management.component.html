@@ -12,13 +12,13 @@
     </ol>
     <a class="right_submenu_item" routerLink="/app/images-management" routerLinkActive="active">Управление изображениями</a> 
   </div>
-  <form #formData='ngForm' (ngSubmit)="onSubmit(formData)" class="col-md-8">
+  <form [formGroup]='ngForm' (ngSubmit)="onSubmit()" novalidate class="col-md-8">
     <h2>Новая статья</h2>
     <div class="row">
       <div class="col-md-12">
         <div class="form-group custom_form_group">
             <label for="title">Заголовок</label>
-            <input id="title" (ngModel)="model.title" required name="title" type="text" placeholder="" class="form-control">
+            <input id="title" (ngModel)="model.title" required formControlName="title" type="text" placeholder="" class="form-control">
         </div>
       </div>
     </div>
@@ -26,7 +26,7 @@
       <div class="col-md-12">
         <div class="form-group custom_form_group">
             <label for="intro">Интро</label>
-            <input id="intro" (ngModel)="model.intro" required name="intro" type="text" placeholder="" class="form-control">
+            <input id="intro" (ngModel)="model.intro" required formControlName="intro" type="text" placeholder="" class="form-control">
         </div>
       </div>
     </div>
@@ -34,7 +34,7 @@
       <div class="col-md-12">
         <div class="form-group custom_form_group">
           <label for="content">Контент</label>
-          <textarea class="form-control" id="content" required name="content" (ngModel)="model.content" (keyup)="updatePreview(formData)"></textarea>
+          <textarea class="form-control" id="content" required formControlName="content"></textarea>
         </div>  
       </div>
     </div>
@@ -42,7 +42,7 @@
     <div class="row">
       <div class="col-md-12">
         <button class="btn btn-primary" type="submit">Отправить</button>
-        <button class="btn btn-default" type="button" (click)="clear(formData)">Очистить</button>
+        <button class="btn btn-default" type="button" (click)="clear()">Очистить</button>
         <button class="btn btn-default" data-toggle="modal" data-target="#preview" type="button">Просмотр</button>
       </div>
     </div>

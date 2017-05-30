@@ -3,6 +3,7 @@ import { Post } from '../../model/post';
 import { PostService } from '../../services/post.service';
 import {AngularFire, FirebaseListObservable} from 'angularfire2';
 import { moveIn, fallIn, moveInLeft } from '../../router.animation';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-blog',
@@ -19,7 +20,7 @@ export class BlogComponent implements OnInit {
   selectedKey:string = null;
   selectedTitle:string;
 
-  constructor(private ps:PostService) {
+  constructor(private ps:PostService,private router: Router) {
     this.isLoading = true;
     this.posts = ps.getPosts();
     this.posts.subscribe(x => {
@@ -44,6 +45,10 @@ export class BlogComponent implements OnInit {
   cancel(){
     this.selectedKey = null;
     this.selectedTitle = null;
+  }
+
+  edit(key:string){
+    if(key) this.router.navigate(['/app/post-management', {'key':key}]);
   }
 
 }
