@@ -68,6 +68,14 @@ export class PostManagementComponent implements OnInit {
 
   onSubmit() {
 
+    let postFromBase = this.ps.getPost(this.key);
+    if(postFromBase){
+      postFromBase.update({
+        title:this.ngForm.value.title,
+        intro:this.ngForm.value.intro,
+        body:this.ngForm.value.content
+      });
+    }else{  
       let post = new Post(
         this.name.auth.displayName,
         this.ngForm.value.content,
@@ -80,8 +88,8 @@ export class PostManagementComponent implements OnInit {
         this.ngForm.value.title
       );
       this.ps.push(post);
-      this.toast();
-    
+    }
+    this.toast();
     this.ngForm.reset();
     this.preview = '';
   }

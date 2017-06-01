@@ -4,7 +4,7 @@
   </div>
 </div>
 
-<div *ngIf="!isLoading" class="container proj-container" style="margin-top: 14px;">
+<div *ngIf="!isLoading" class="container proj-container" style="margin-top: 14px;padding-top: 38px;">
   <div class="col-md-12 sub-nav post_management_submenu">
     <ol class="breadcrumb">
       <li><a id="blog_link" routerLink="/app/blog" routerLinkActive="active">Блог</a></li>
@@ -33,7 +33,11 @@
     <div class="row">
       <div class="col-md-12">
         <div class="form-group custom_form_group">
-          <label for="content">Контент</label>
+          <label for="content">Контент
+            <a href="https://dimpu.github.io/angular2-markdown/" target="blank">
+              <i class="fa fa-info-circle markdown_info_link" aria-hidden="true"></i>
+            </a>
+          </label>
           <textarea class="form-control" id="content" required formControlName="content"></textarea>
         </div>  
       </div>

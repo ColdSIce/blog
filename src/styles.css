@@ -1145,6 +1145,7 @@ ol a:hover{
     position: relative;
     top:4px;
     font-size: 2em;
+    transition: all .3s ease;
 }
 .remove_post_link:hover{
     color: #FF3B3F;
@@ -1166,4 +1167,12 @@ ol a:hover{
     color: #fff;
     cursor: pointer;
     transition: all .3s ease;
+}
+.markdown_info_link{
+    font-size: 16px;
+    color: #ededed;
+    transition: all .3s ease;
+}
+.markdown_info_link:hover{
+    color: #81D4FA;
 }
