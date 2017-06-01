@@ -73,7 +73,9 @@ export class PostManagementComponent implements OnInit {
       postFromBase.update({
         title:this.ngForm.value.title,
         intro:this.ngForm.value.intro,
-        body:this.ngForm.value.content
+        body:this.ngForm.value.content,
+        updated: new Date(),
+        author:this.name.auth.displayName
       });
     }else{  
       let post = new Post(

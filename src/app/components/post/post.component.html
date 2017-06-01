@@ -25,7 +25,7 @@
         Автор <a href="#">{{(post | async)?.author}}</a>
     </p>
     <hr>
-    <p><span class="glyphicon glyphicon-time"></span> Опубликовано: {{(post | async)?.created | date: 'dd-MM-yyyy HH:mm'}}</p>
+    <p><span class="glyphicon glyphicon-time"></span> Опубликовано: {{(post | async)?.updated | date: 'dd-MM-yyyy HH:mm'}}</p>
     <hr>
     <p class="lead">{{(post | async)?.intro}}</p>
     <markdown [data]="(post | async)?.body"></markdown>
